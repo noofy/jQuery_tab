@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>C.G.D.W. sample</title>
+<style type="text/css">
+#container { width:610px; margin:0 auto;}
+#container ul { margin:0; padding:0; list-style:none;}
+#container ul li { width:120px; height:30px; float:left; border:1px solid #CCC; border-bottom:none; border-radius:6px 6px 0 0; -moz-border-radius:6px 6px 0 0; -webkit-border-radius:6px 6px 0 0;}
+#container ul li a { display:block; text-align:center; padding:5px; text-decoration:none; font:11pt "微軟正黑體"; color:#333; background:#eee; background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff));/*chrome*/ background:-moz-linear-gradient(top,#eee,#fff);/*firefax*/ background:-o-linear-gradient(top,#eee,#fff);/*opera*/ border-radius:6px 6px 0 0; -moz-border-radius:6px 6px 0 0; -webkit-border-radius:6px 6px 0 0;}
+#container ul li a:hover { display:block; text-align:center; padding:5px; text-decoration:none; font:11pt "微軟正黑體"; color:#eee; background:#333; background:-webkit-gradient(linear, left top, left bottom, from(#333), to(#fff));/*chrome*/ background:-moz-linear-gradient(top,#333,#fff);/*firefax*/ background:-o-linear-gradient(top,#333,#fff);/*opera*/ border-radius:6px 6px 0 0; -moz-border-radius:6px 6px 0 0; -webkit-border-radius:6px 6px 0 0;}
+#container ul li a.selected { display:block; text-align:center; padding:5px; text-decoration:none; font:11pt "微軟正黑體"; color:#eee; background:#333; background:-webkit-gradient(linear, left top, left bottom, from(#333), to(#fff));/*chrome*/ background:-moz-linear-gradient(top,#333,#fff);/*firefax*/ background:-o-linear-gradient(top,#333,#fff);/*opera*/ border-radius:6px 6px 0 0; -moz-border-radius:6px 6px 0 0; -webkit-border-radius:6px 6px 0 0;}
+#panel { width:588px; padding:10px; border:1px solid #CCC; border-top:none; border-radius:0 0 6px 6px; -moz-border-radius:0 0 6px 6px; -webkit-border-radius:0 0 6px 6px; display:inline-block;}
+#panel div { font:11pt "微軟正黑體"; line-height:1.8em; display:none;}
+</style>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#container li:first > a').addClass('selected');
+	$('#panel div.1').css('display', 'block');
+	$('#container li > a').click(function(e) {
+		if(!$(this).hasClass('selected')) {
+			$('#container li > a').removeClass('selected');
+			$(this).addClass('selected');
+			$('#panel div').css('display', 'none');
+			var _num = $(this).attr('href');			
+			$('#panel div.' + _num).css('display', 'block');
+		}
+		e.preventDefault();
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="container">
+<ul id="tabs">
+<li><a href="1">HTML5</a></li>
+<li><a href="2">CSS3</a></li>
+<li><a href="3">JavaScript</a></li>
+<li><a href="4">jQuery</a></li>
+<li><a href="5">PHP</a></li>
+</ul>
+<div id="panel">
+<div class="1">
+<h2>HTML5</h2>
+HTML5是HTML下一個主要的修訂版本，現在仍處於發展階段。目標是取代1999年所製定的HTML 4.01和XHTML 1.0標準，以期能在網際網路應用迅速發展的時候，使網路標準達到符合當代的網路需求。廣義論及HTML5時，實際指的是包括HTML、CSS和JavaScript在內的一套技術組合。它希望能夠減少瀏覽器對於需要外掛程式的豐富性網路應用服務（plug-in-based rich internet application，RIA)，如Adobe Flash、Microsoft Silverlight，與Oracle JavaFX的需求，並且提供更多能有效增強網路應用的標準集。
+</div>
+<div class="2">
+<h2>CSS3</h2>
+層疊樣式表（英語：Cascading Style Sheets，簡寫CSS），又稱串樣式列表、階層式樣式表檔案，一種用來為結構化文件（如HTML文件或XML應用）添加樣式（字型、間距和顏色等）的電腦語言，由W3C定義和維護。目前最新版本是CSS2.1，為W3C的推薦標準。CSS3現在已被大部分現代瀏覽器支援，而下一版的CSS4仍在開發過程中。
+</div>
+<div class="3">
+<h2>JavaScript</h2>
+JavaScript，一種直譯式程式語言，是一種動態型別、弱型別、基於原型的語言，內建支援型別。它的直譯器被稱為JavaScript引擎，為瀏覽器的一部份，廣泛用於客戶端的腳本語言，最早是在HTML網頁上使用，用來給HTML網頁增加動態功能。然而現在JavaScript也可被用於網路伺服器，如Node.js。
+</div>
+<div class="4">
+<h2>jQuery</h2>
+jQuery是一套跨瀏覽器的JavaScript函式庫，簡化HTML與JavaScript之間的操作。[1]由John Resig在2006年1月的BarCamp NYC上釋出第一個版本。目前是由 Dave Methvin 領導的開發團隊進行開發。全球前10000個存取最高的網站中，有65%使用了jQuery，是目前最受歡迎的JavaScript函式庫。
+</div>
+<div class="5">
+<h2>PHP</h2>
+PHP（全稱：PHP：Hypertext Preprocessor，即「PHP：超文字預處理器」）是一種開源的通用電腦指令碼語言，尤其適用於網路開發並可嵌入HTML中使用。PHP的語法借鑒吸收了C語言、Java和Perl等流行電腦語言的特點，易於一般程式設計師學習。PHP的主要標的是允許網路開發人員快速編寫動態頁面，但PHP也被用於其他很多領域。<br>PHP最初是由勒多夫在1995年開始開發的。而現在PHP的標準由PHP Group和開放原始碼社群維護。PHP以PHP License作為許可協議，不過因為這個協議限制了PHP名稱的使用，所以和開放原始碼許可協議GPL不相容。
+</div>
+</div>
+</div>
+</body>
+</html>
